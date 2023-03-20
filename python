@@ -1,0 +1,50 @@
+#Compound conditions
+#AND - all Trues
+#OR- ANY Trues
+#NOT - exculeds or reverses t/f f/t
+import random 
+from tkinter import simpledialog 
+def main ():
+
+    gpa = 3.4
+    credits = 15
+    degree = ""
+    if(gpa >= 3.5 ) and (credits >= 15 ) and (degree != ""):
+        print("CONGRATULATIONS!.... You are on the Deans list")
+    else:
+        print(" Sorry you did NOT make the Dean's list. Better luck next semester.")
+
+
+
+    #OR
+    visa= True
+    mc = False
+    amex = False
+
+    if (visa == True) or (mc == True) or (amex == True):
+        print("Credit card approved")
+    else:
+        print("Must select a credit card")
+    
+    #NOT
+
+    mfa= 0000
+    userIn = 0
+
+    #generate a random 4-digit number 
+    mfa = random.randint(1000,9999)
+    print(mfa)
+    userIn = simpledialog.askinteger("ITP150", "Enter this MFA code : " + str(mfa))
+    if (userIn != mfa):
+        mfa = random.randint(1000,9999)
+        userIn = simpledialog.askinteger("ITP150", "Enter this new MFA code : " + str(mfa))
+    else:
+        print("Your have successfully logged in ")
+
+
+
+
+
+
+main()
+
